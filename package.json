@@ -1,0 +1,26 @@
+{
+  "name": "gulp-example",
+  "version": "0.0.1",
+  "description": "gulp example of use",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeinnordeste/gulp-example.git"
+  },
+  "keywords": [
+    "gulp",
+    "example"
+  ],
+  "author": "luiz alberto s. ribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madeinnordeste/gulp-example/issues"
+  },
+  "homepage": "https://github.com/madeinnordeste/gulp-example#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
