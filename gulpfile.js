@@ -6,6 +6,8 @@ var concat = require('gulp-concat');
 var concatcss = require('gulp-concat-css');
 var cssreplace = require('gulp-replace');
 var cssnano = require('gulp-cssnano');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 //minify and concat javascripts
 gulp.task('scripts-minify-concat', function() {
@@ -27,9 +29,21 @@ gulp.task('styles-minify-concat', function() {
     	
 });
 
+//compress images
+gulp.task('images-compress', function(){
+    return gulp.src('src/img/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/img'));
+});
 
+
+//Default task
 gulp.task('default', function() {
 
-	gulp.start('scripts-minify-concat', 'styles-minify-concat');
+	gulp.start('scripts-minify-concat', 'styles-minify-concat', 'images-compress');
 
 });
